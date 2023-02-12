@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["Kingdon Barrett <kingdon@weave.works>"]
+description = "An example app for the quickstart"
+name = "qs-wasm-spin"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "qs-wasm-spin"
+source = "qs_wasm_spin.wasm"
+[component.trigger]
+route = "/hi"
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
